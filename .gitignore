@@ -1,0 +1,6 @@
+#ignore DS files
+.DS_Store
+
+#ignore BIN folders
+bin*
+obj*
