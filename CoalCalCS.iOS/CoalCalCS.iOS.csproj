@@ -49,6 +49,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
     <IpaPackageName>
     </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -90,13 +93,6 @@
     <Reference Include="monotouch" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Landscape%402x.png" />
-    <BundleResource Include="Resources\Default-Landscape.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
   </ItemGroup>
@@ -111,6 +107,25 @@
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
     <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
+    <InterfaceDefinition Include="iPad_SplashScreen.xib" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
+  <ItemGroup>
+    <BundleResource Include="Resources\Default%402x.png" />
+    <BundleResource Include="Resources\Default.png" />
+    <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="Resources\Default-Landscape.png" />
+    <BundleResource Include="Resources\Default-Landscape%402x.png" />
+    <BundleResource Include="Resources\ipad_tab_bg.png" />
+    <BundleResource Include="Resources\ipad_ic_contactus%402x.png" />
+    <BundleResource Include="Resources\ipad_ic_help%402x.png" />
+    <BundleResource Include="Resources\ipad_ic_print%402x.png" />
+    <BundleResource Include="Resources\ipad_ic_sgs%402x.png" />
+    <BundleResource Include="Resources\ipad_ic_share%402x.png" />
+    <BundleResource Include="Resources\ipad_ic_visitus%402x.png" />
+    <BundleResource Include="Resources\down_arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Images.xcassets\" />
+  </ItemGroup>
 </Project>

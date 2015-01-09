@@ -8,9 +8,12 @@ namespace CoalCalCS.iOS
 {
 	public partial class CoalCalCS_iOSViewController : UIViewController
 	{
+		int selectedTabIndex = -1;
+
 		static bool UserInterfaceIdiomIsPhone {
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
 		}
+
 
 		public CoalCalCS_iOSViewController (IntPtr handle) : base (handle)
 		{
@@ -30,7 +33,9 @@ namespace CoalCalCS.iOS
 		{
 			base.ViewDidLoad ();
 			
-			// Perform any additional setup after loading the view, typically from a nib.
+			foreach (UIButton button in tabButtons) {
+				button.TitleLabel.TextAlignment = UITextAlignment.Center;
+			}
 		}
 
 		public override void ViewWillAppear (bool animated)
@@ -54,6 +59,54 @@ namespace CoalCalCS.iOS
 		}
 
 		#endregion
+
+		partial void onTapContact (MonoTouch.Foundation.NSObject sender)
+		{
+		}
+
+		partial void onTapHelp (MonoTouch.Foundation.NSObject sender)
+		{
+		}
+
+		partial void onTapPrint (MonoTouch.Foundation.NSObject sender)
+		{
+		}
+
+		partial void onTapShare (MonoTouch.Foundation.NSObject sender)
+		{
+		}
+
+		partial void onTapVisit (MonoTouch.Foundation.NSObject sender)
+		{
+		}
+
+		partial void onTapTabItem (MonoTouch.UIKit.UIButton sender)
+		{
+			int index = sender.Tag - 1;
+
+			SelectTab(index);
+		}
+
+		protected void SelectTab(int tabIndex)
+		{
+			if (selectedTabIndex >= 0 && selectedTabIndex < tabButtons.Length) {
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.FromWhiteAlpha(157.0f/255.0f, 1), UIControlState.Normal);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.FromWhiteAlpha(157.0f/255.0f, 1), UIControlState.Selected);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.FromWhiteAlpha(157.0f/255.0f, 1), UIControlState.Highlighted);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.FromWhiteAlpha(157.0f/255.0f, 1), UIControlState.Disabled);
+			}
+
+			selectedTabIndex = tabIndex;
+
+			if (selectedTabIndex >= 0 && selectedTabIndex < tabButtons.Length) {
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.White, UIControlState.Normal);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.White, UIControlState.Selected);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.White, UIControlState.Highlighted);
+				tabButtons [selectedTabIndex].SetTitleColor (UIColor.White, UIControlState.Disabled);
+
+				pageTitle.Text = "  " + tabButtons [selectedTabIndex].Title (UIControlState.Normal).ToUpper ();
+			}
+		}
 	}
 }
 

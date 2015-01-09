@@ -36,5 +36,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>iPad_SplashScreen</string>
 </dict>
 </plist>
