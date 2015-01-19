@@ -1,10 +1,12 @@
 // WARNING
 //
-// This file has been generated automatically by Xamarin Studio to store outlets and
-// actions made in the UI designer. If it is removed, they will be lost.
-// Manual changes to this file may not be handled correctly.
+// This file has been generated automatically by Xamarin Studio from the outlets and
+// actions declared in your storyboard file.
+// Manual changes to this file will not be maintained.
 //
 using MonoTouch.Foundation;
+using MonoTouch.UIKit;
+using System;
 using System.CodeDom.Compiler;
 
 namespace CoalCalCS.iOS
@@ -22,34 +24,31 @@ namespace CoalCalCS.iOS
 		MonoTouch.UIKit.UIButton[] tabButtons { get; set; }
 
 		[Action ("onTapContact:")]
-		partial void onTapContact (MonoTouch.Foundation.NSObject sender);
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapContact (UIButton sender);
 
 		[Action ("onTapHelp:")]
-		partial void onTapHelp (MonoTouch.Foundation.NSObject sender);
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapHelp (UIButton sender);
 
 		[Action ("onTapPrint:")]
-		partial void onTapPrint (MonoTouch.Foundation.NSObject sender);
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapPrint (UIButton sender);
 
 		[Action ("onTapShare:")]
-		partial void onTapShare (MonoTouch.Foundation.NSObject sender);
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapShare (UIButton sender);
 
 		[Action ("onTapTabItem:")]
-		partial void onTapTabItem (MonoTouch.UIKit.UIButton sender);
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapTabItem (UIButton sender);
 
 		[Action ("onTapVisit:")]
-		partial void onTapVisit (MonoTouch.Foundation.NSObject sender);
-		
+		[GeneratedCode ("iOS Designer", "1.0")]
+		partial void onTapVisit (UIButton sender);
+
 		void ReleaseDesignerOutlets ()
 		{
-			if (pageTitle != null) {
-				pageTitle.Dispose ();
-				pageTitle = null;
-			}
-
-			if (pageContainer != null) {
-				pageContainer.Dispose ();
-				pageContainer = null;
-			}
 		}
 	}
 }

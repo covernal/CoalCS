@@ -1,8 +1,10 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.Solafort's iPad" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CoalCalCS.iOS/AppDelegate.cs">
+﻿<Properties StartupItem="CoalCalCS.iOS/CoalCalCS.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPad2.7.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CoalCalCS.iOS/Class/DropdownButton.cs">
     <Files>
-      <File FileName="CoalCalCS.iOS/AppDelegate.cs" Line="29" Column="29" />
+      <File FileName="CoalCalCS.iOS/CoalCalCS.iOSViewController.cs" Line="30" Column="30" />
+      <File FileName="CoalCalCS.iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="CoalCalCS.iOS/Class/DropdownButton.cs" Line="10" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

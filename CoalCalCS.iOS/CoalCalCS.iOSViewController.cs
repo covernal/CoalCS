@@ -14,6 +14,8 @@ namespace CoalCalCS.iOS
 			get { return UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone; }
 		}
 
+		CBasisVC cBasisVC;
+
 
 		public CoalCalCS_iOSViewController (IntPtr handle) : base (handle)
 		{
@@ -32,55 +34,59 @@ namespace CoalCalCS.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			AppDelegate.CurrentVC = this;
 			
 			foreach (UIButton button in tabButtons) {
 				button.TitleLabel.TextAlignment = UITextAlignment.Center;
 			}
-		}
 
-		public override void ViewWillAppear (bool animated)
-		{
-			base.ViewWillAppear (animated);
+			cBasisVC = this.Storyboard.InstantiateViewController ("CBasisVC") as CBasisVC;
 		}
 
 		public override void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
-		}
 
-		public override void ViewWillDisappear (bool animated)
-		{
-			base.ViewWillDisappear (animated);
-		}
-
-		public override void ViewDidDisappear (bool animated)
-		{
-			base.ViewDidDisappear (animated);
+			showPage (1);
 		}
 
 		#endregion
 
-		partial void onTapContact (MonoTouch.Foundation.NSObject sender)
+		protected void showPage(int index)
+		{
+			foreach (UIView subview in this.pageContainer.Subviews) {
+				subview.RemoveFromSuperview ();
+			}
+
+			this.pageContainer.AddSubview (cBasisVC.View);
+			cBasisVC.View.Frame = this.pageContainer.Bounds;
+
+			this.pageContainer.Layer.BorderColor = UIColor.Blue.CGColor;
+			this.pageContainer.Layer.BorderWidth = 1;
+		}
+
+		partial void onTapContact (UIButton sender)
 		{
 		}
 
-		partial void onTapHelp (MonoTouch.Foundation.NSObject sender)
+		partial void onTapHelp (UIButton sender)
 		{
 		}
 
-		partial void onTapPrint (MonoTouch.Foundation.NSObject sender)
+		partial void onTapPrint (UIButton sender)
 		{
 		}
 
-		partial void onTapShare (MonoTouch.Foundation.NSObject sender)
+		partial void onTapShare (UIButton sender)
 		{
 		}
 
-		partial void onTapVisit (MonoTouch.Foundation.NSObject sender)
+		partial void onTapVisit (UIButton sender)
 		{
 		}
 
-		partial void onTapTabItem (MonoTouch.UIKit.UIButton sender)
+		partial void onTapTabItem (UIButton sender)
 		{
 			int index = sender.Tag - 1;
 

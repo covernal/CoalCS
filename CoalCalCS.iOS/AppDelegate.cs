@@ -14,6 +14,11 @@ namespace CoalCalCS.iOS
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
+
+		static public UIViewController CurrentVC {
+			get;
+			set;
+		}
 		
 		public override UIWindow Window {
 			get;

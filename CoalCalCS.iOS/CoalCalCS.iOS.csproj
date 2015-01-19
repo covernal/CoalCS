@@ -103,6 +103,12 @@
     <Compile Include="CoalCalCS.iOSViewController.designer.cs">
       <DependentUpon>CoalCalCS.iOSViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Class\DropdownButton.cs" />
+    <Compile Include="Class\DropdownButton.designer.cs" />
+    <Compile Include="CBasisVC.cs" />
+    <Compile Include="CBasisVC.designer.cs">
+      <DependentUpon>CBasisVC.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
@@ -127,5 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\Images.xcassets\" />
+    <Folder Include="Class\" />
   </ItemGroup>
 </Project>
